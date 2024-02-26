@@ -45,21 +45,19 @@ class TpjpaApplicationTests {
 		Competence c = new Competence();
 		c.setLabelle("dev");
 		c.setNiveau(3);
-		//c.getApprenants().add(a);
 		competence.save(c);
+		
+		Competence c2 = new Competence();
+		c2.setLabelle("mae");
+		c2.setNiveau(34);
+		competence.save(c2);
 		
 		Apprenant a = new Apprenant();
 		a.setPrenom("pat");
 		a.setNom("catou");
 		a.setSessionFormation(s);
 		a.getCompetences().add(c);
-		//apprenant.save(a);
-		
-		Competence c2 = new Competence();
-		c2.setLabelle("mae");
-		c2.setNiveau(34);
-		c2.getApprenants().add(a);
-		competence.save(c2);
+		a.getCompetences().add(c2);
 		apprenant.save(a);
 		
 		DossierAdministration d = new DossierAdministration();
